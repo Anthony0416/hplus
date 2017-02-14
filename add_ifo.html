@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>H+ 后台主题UI框架 - 基本表单</title>
+		<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+		<meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+		<link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<style type="text/css">
+			.check_box_hot {
+				font-size: 13px;
+				font-weight: 800;
+				margin: 10px 0 0 15px !important;
+			}
+			@media only screen and (min-width: 768px) {
+				body {
+					min-width: 1032px;
+					overflow: auto;
+				}
+				.fenge {
+					height: 50px;
+				}
+				.tupianfenge {
+					height: 40px;
+				}
+				.choosePic {
+					padding-top: 7px;
+					outline: none !important;
+				}
+			}
+			@media only screen and (max-width: 767px) {
+				.fenge {
+					height: 130px;
+				}
+				.tupianfenge {
+					height: 50px;
+				}
+				.choosePic {
+					outline: none !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body class="gray-bg">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>增加商品信息</h5>
+							<small>&nbsp;&nbsp; * 为必填</small>
+						</div>
+						<div class="ibox-content">
+							<iframe src="about:blank" name="blankFrame" id="blankFrame" style="display: none;"></iframe>
+							<form class="form-horizontal" target="blankFrame" method="post" enctype="multipart/form-data" action="http://localhost:3000/upDetails">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">商品名*</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" name="title" required="required">
+									</div>
+									<div class="col-sm-2">
+										<div class="checkbox i-checks">
+	                    <input type="checkbox" name="hot"> <i></i> 热门商品                    
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Product*</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control" name="title_en" required="required">
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">商品描述</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="keyWords">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Description</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" name="keyWords_en">
+									</div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">商品缩略图*</label>
+									<div class="col-sm-2">
+										<select id="pic1" onchange="choosePic1(this)" class="form-control m-b" name="showPicNum">
+	                    <option value="1"> 1 张</option>
+	                    <option value="2"> 2 张</option>
+	                    <option value="3"> 3 张</option>
+	                    <option value="4"> 4 张</option>
+	                    <option value="5"> 5 张</option>
+			              </select>
+			            </div>
+			            <div class="col-sm-8" id="showPic1">
+		              	
+		              	<div class="tupianfenge">
+		              		<label class="col-sm-2 control-label">图 1</label>
+			                <div class="col-sm-6">
+		               			<input type="file" class="choosePic" name="uploadPoster1" required="required"/>
+		               		</div>
+	               		</div>
+
+		              </div>
+			          </div>
+			            
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">商品规格*</label>
+									<div class="col-sm-2">
+										<select id="select1" onchange="change1(this)" class="form-control m-b" name="account">
+	                    <option value="1"> 1 组</option>
+	                    <option value="2"> 2 组</option>
+	                    <option value="3"> 3 组</option>
+			              </select>
+			            </div>
+		              <div class="col-sm-8" id="guige">		
+		              	<div class="fenge">
+			               	<label class="col-sm-2 control-label">规格 1*</label>
+		               		<div class="col-sm-4">
+		               			<input type="text" class="form-control" name="standard1" required="required">
+		               		</div>
+			               	<label class="col-sm-2 control-label">价格 1*</label>
+		               		<div class="col-sm-4">
+		               			<input type="text" class="form-control" name="price1" required="required">
+		               		</div>
+	               		</div>
+	               		<div class="fenge">
+			               	<label class="col-sm-2 control-label">Standard 1*</label>
+		               		<div class="col-sm-4">
+		               			<input type="text" class="form-control" name="standard1_en" required="required">
+		               		</div>
+			               	<label class="col-sm-2 control-label">Price 1*</label>
+		               		<div class="col-sm-4">
+		               			<input type="text" class="form-control" name="price1_en" required="required">
+		               		</div>
+	               		</div>
+		              </div>
+								</div>
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">规格参数</label>
+									<div class="col-sm-10">
+										<div class="col-sm-2">
+											<div class="checkbox i-checks">
+		                    <input type="checkbox" name="parameter"> <i></i> 使用表格                    
+											</div>
+										</div>
+										<div class="col-sm-8">
+											<div class="fenge">
+				               	<label class="col-sm-2 control-label">额定算力</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Hash_Rate">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Hash Rate</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Hash_Rate_en">
+			               		</div>
+			               	</div>
+			               	<div class="fenge">
+				               	<label class="col-sm-2 control-label">整机算力</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Total_Hash">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Total Hash</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Total_Hash_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">墙上功耗</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Consumption">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Power Consumption</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Consumption_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">电源效率</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Efficiency">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Power Efficiency</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Efficiency_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">输入电压</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Input_Voltage">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Input Voltage</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Input_Voltage_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">额定电压</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Rated_Voltage">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Rated Voltage</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Rated_Voltage_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">能耗比</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="EER">
+			               		</div>
+			               		<label class="col-sm-2 control-label">EER</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="EER_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">显卡数量</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Chips_Per_Unit">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Chips Per Unit</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Chips_Per_Unit_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">芯片数量</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Number_Chips">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Number of Chips</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Number_Chips_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">运算板数量</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operation_Panel">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Operation Panel</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operation_Panel_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">超频</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Overclock">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Overclock</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Overclock_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">外形尺寸</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Dimensions">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Dimensions</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Dimensions_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">整机重量</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Weight">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Weight</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Weight_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">冷却</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Cooling">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Cooling</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Cooling_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">工作温度</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operating_Temperature">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Operating Temperature</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operating_Temperature_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">工作湿度</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operating_Humidity">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Operating Humidity</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Operating_Humidity_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">噪音</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Noise_Specifications">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Noise Specifications</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Noise_Specifications_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">网络连接</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Network_Connection">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Network Connection</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Network_Connection_en">
+			               		</div>
+		               		</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">电源接口</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Interface">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Power Interface</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Power_Interface_en">
+			               		</div>
+			               	</div>
+		               		<div class="fenge">
+				               	<label class="col-sm-2 control-label">电源连接方式</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Connection_Supply">
+			               		</div>
+			               		<label class="col-sm-2 control-label">Connection to the Supply</label>
+			               		<div class="col-sm-4">
+			               			<input type="text" class="form-control" name="Connection_Supply_en">
+			               		</div>
+		               		</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">图片详情</label>
+									<div class="col-sm-2">
+										<select id="pic2" onchange="choosePic2(this)" class="form-control m-b" name="showPicNum2">
+	                    <option value="1"> 1 张</option>
+	                    <option value="2"> 2 张</option>
+	                    <option value="3"> 3 张</option>
+	                    <option value="4"> 4 张</option>
+	                    <option value="5"> 5 张</option>
+	                    <option value="6"> 6 张</option>
+	                    <option value="7"> 7 张</option>
+	                    <option value="8"> 8 张</option>
+	                    <option value="9"> 9 张</option>
+	                    <option value="10"> 10 张</option>
+	                    <option value="11"> 11 张</option>
+	                    <option value="12"> 12 张</option>
+	                    <option value="13"> 13 张</option>
+	                    <option value="14"> 14 张</option>
+	                    <option value="15"> 15 张</option>
+	                    <option value="16"> 16 张</option>
+	                    <option value="17"> 17 张</option>
+	                    <option value="18"> 18 张</option>
+	                    <option value="19"> 19 张</option>
+	                    <option value="20"> 20 张</option>
+			              </select>
+			            </div>
+			            <div class="col-sm-8" id="showPic2">
+		              	
+		              	<div class="tupianfenge">
+		              		<label class="col-sm-2 control-label">图 1</label>
+			                <div class="col-sm-6">
+		               			<input type="file" class="choosePic" name="uploadDetail1"/>
+		               		</div>
+	               		</div>
+
+		              </div>
+			          </div>
+								
+								
+								<div class="hr-line-dashed"></div>
+								<div class="form-group">
+									<div class="col-sm-4 col-sm-offset-2">
+										<button class="btn btn-primary" type="submit"> 保 存 </button>
+										<!--<button class="btn btn-white" type="submit">取消</button>-->
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/content.min.js?v=1.0.0"></script>
+		<script src="js/plugins/iCheck/icheck.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".i-checks").iCheck({
+					checkboxClass: "icheckbox_square-green",
+					radioClass: "iradio_square-green",
+				})
+			});
+			
+			function change1 () {
+				var str = '';
+				var n = $('#select1').find("option:selected").attr("value");console.log(n);
+				for (var i=1;i<=n;i++) {
+					str += '<div class="fenge">' + 
+		               	'<label class="col-sm-2 control-label">规格 ' + i + '*</label>' + 
+	               		'<div class="col-sm-4">' + 
+	               			'<input type="text" class="form-control" name="standard' + i + '" required="required">' + 
+	               		'</div>' + 
+		               	'<label class="col-sm-2 control-label">价格 ' + i + '*</label>' + 
+	               		'<div class="col-sm-4">' + 
+	               			'<input type="text" class="form-control" name="price' + i + '" required="required">' + 
+	               		'</div>' + 
+               		'</div>' + 
+               		'<div class="fenge">' + 
+		               	'<label class="col-sm-2 control-label">Standard ' + i + '*</label>' + 
+	               		'<div class="col-sm-4">' + 
+	               			'<input type="text" class="form-control" name="standard' + i + '_en" required="required">' + 
+	               		'</div>' + 
+		               	'<label class="col-sm-2 control-label">Price ' + i + '*</label>' + 
+	               		'<div class="col-sm-4">' + 
+	               			'<input type="text" class="form-control" name="price' + i + '_en" required="required">' + 
+	               		'</div>' + 
+               		'</div>';
+				}
+				$('#guige').html(str);
+			}
+			
+			function choosePic1 () {
+				var str = '';
+				var n = $('#pic1').find("option:selected").attr("value");console.log(n);
+				for (var i=1;i<=n;i++) {
+					str += '<div class="tupianfenge">' + 
+		              		'<label class="col-sm-2 control-label">图 ' + i + '</label>' + 
+			                '<div class="col-sm-6">' + 
+		               			'<input type="file" class="choosePic" name="uploadPoster' + i + '" required="required"/>' + 
+		               		'</div>' + 
+	               		'</div>'
+				}
+				$('#showPic1').html(str)
+			}
+			
+			function choosePic2 () {
+				var str = '';
+				var n = $('#pic2').find("option:selected").attr("value");console.log(n);
+				for (var i=1;i<=n;i++) {
+					str += '<div class="tupianfenge">' + 
+		              		'<label class="col-sm-2 control-label">图 ' + i + '</label>' + 
+			                '<div class="col-sm-6">' + 
+		               			'<input type="file" class="choosePic" name="uploadDetail' + i + '"/>' + 
+		               		'</div>' + 
+	               		'</div>'
+				}
+				$('#showPic2').html(str)
+			}
+		</script>
+		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	</body>
+
+	<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+
+</html>
