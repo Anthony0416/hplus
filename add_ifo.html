@@ -18,6 +18,7 @@
 		<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
 		<link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
 		<style type="text/css">
 			.check_box_hot {
 				font-size: 13px;
@@ -65,16 +66,17 @@
 						</div>
 						<div class="ibox-content">
 							<iframe src="about:blank" name="blankFrame" id="blankFrame" style="display: none;"></iframe>
-							<form class="form-horizontal" target="blankFrame" method="post" enctype="multipart/form-data" action="http://localhost:3000/upDetails">
+							<!--<form class="form-horizontal" target="blankFrame" method="post" enctype="multipart/form-data" action="http://localhost:3000/upDetails">-->
+							<form class="form-horizontal" target="blankFrame" method="post" enctype="multipart/form-data" action="http://www.lingyun.party/app1/upDetails">
 								<div class="form-group">
 									<label class="col-sm-2 control-label">商品名*</label>
 									<div class="col-sm-8">
 										<input type="text" class="form-control" name="title" required="required">
 									</div>
 									<div class="col-sm-2">
-										<div class="checkbox i-checks">
+										<!--<div class="checkbox i-checks">-->
 	                    <input type="checkbox" name="hot"> <i></i> 热门商品                    
-										</div>
+										<!--</div>-->
 									</div>
 								</div>
 								<div class="form-group">
@@ -158,9 +160,9 @@
 									<label class="col-sm-2 control-label">规格参数</label>
 									<div class="col-sm-10">
 										<div class="col-sm-2">
-											<div class="checkbox i-checks">
+											<!--<div class="checkbox i-checks">-->
 		                    <input type="checkbox" name="parameter"> <i></i> 使用表格                    
-											</div>
+											<!--</div>-->
 										</div>
 										<div class="col-sm-8">
 											<div class="fenge">
@@ -411,7 +413,7 @@
 								<div class="form-group">
 									<div class="col-sm-4 col-sm-offset-2">
 										<button class="btn btn-primary" type="submit"> 保 存 </button>
-										<!--<button class="btn btn-white" type="submit">取消</button>-->
+										<button class="btn btn-white" id="form_reset" type="reset"> 重 置 </button>
 									</div>
 								</div>
 							</form>
@@ -425,8 +427,11 @@
 		<script src="js/bootstrap.min.js?v=3.3.6"></script>
 		<script src="js/content.min.js?v=1.0.0"></script>
 		<script src="js/plugins/iCheck/icheck.min.js"></script>
+		<script src="js/plugins/toastr/toastr.min.js"></script>
 		<script>
 			$(document).ready(function() {
+				document.domain = "www.lingyun.party"
+				
 				$(".i-checks").iCheck({
 					checkboxClass: "icheckbox_square-green",
 					radioClass: "iradio_square-green",
@@ -487,6 +492,30 @@
 	               		'</div>'
 				}
 				$('#showPic2').html(str)
+			}
+			
+			//前后端约定，返回状态处理函数
+			function duplicate() {
+//				alert("标题重复，请重新输入")
+				toastr.warning("标题重复，请重新输入!","警告")	
+			}
+			function success() {
+//				alert("上传成功")
+				toastr.success("上传成功!","成功");
+				$('#form_reset').click()
+				
+			}
+			function fail() {
+//				alert("上传失败，请重新上传")
+				toastr.error("上传失败，请重新上传!","错误")
+			}
+			function nofile() {
+//				alert("未选择图片上传")
+				toastr.warning("未选择图片上传!","警告")	
+			}
+			function errParam() {
+//				alert("传递参数错误")
+				toastr.warning("传递参数错误!","警告")	
 			}
 		</script>
 		<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
