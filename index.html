@@ -51,8 +51,7 @@
                                 <li><a class="J_menuItem" href="mailbox.html">信箱</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">安全退出</a>
-                                </li>
+                                <li><a class="quit">安全退出</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">H+
@@ -212,7 +211,7 @@
                         </li>
                     </ul>
                 </div>
-                <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+                <a  class="quit roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
             </div>
             <div class="row J_mainContent" id="content-main">
                 <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="index_v148b2.html?v=4.0" frameborder="0" data-id="index_v1.html" seamless></iframe>
@@ -640,6 +639,34 @@
     <script src="js/hplus.min.js?v=4.1.0"></script>
     <script type="text/javascript" src="js/contabs.min.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
+    <script type="text/javascript">
+    	$.ajax({
+    		type:"get",
+    		url:"http://www.lingyun.party:88/app1/checkLogin",
+    		async:true,
+    		success: function (e) {
+    			if (e.code == 1) {
+    				
+    			}else {
+    				window.location.href = "http://www.lingyun.party:88/login.html";
+    			}
+    		}
+    	});
+    	$('.quit').click(function(){
+    		$.ajax({
+    			type:"get",
+    			url:"http://www.lingyun.party:88/app1/logout",
+    			async:true,
+    			success: function (e) {
+    				if (e.code == 1) {
+    					window.location.href = "http://www.lingyun.party:88/login.html";
+    				}else {
+    					alert(e.msg)
+    				}
+    			}
+    		});
+    	})
+    </script>
 </body>
 
 
